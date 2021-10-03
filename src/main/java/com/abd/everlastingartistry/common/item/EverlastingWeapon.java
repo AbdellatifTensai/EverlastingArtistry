@@ -1,6 +1,6 @@
 package com.abd.everlastingartistry.common.item;
 
-import com.abd.everlastingartistry.common.gui.GuiGlyphInfuse;
+import com.abd.everlastingartistry.client.gui.GuiGlyphInfuse;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
