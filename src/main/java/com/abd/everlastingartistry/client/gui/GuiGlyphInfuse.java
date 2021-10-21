@@ -12,11 +12,11 @@ import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.StringTextComponent;
 
-/*a date for absolutly no reason 10/9/2021 9:14pm*/
+//a date for absolutly no reason 10/9/2021 9:14pm
 
 public class GuiGlyphInfuse extends Screen{
 	
-	private final ResourceLocation TEXTURE = new ResourceLocation(EverlastingArtistry.MODID, "textures/gui/bg.png");
+	private final ResourceLocation TEXTURE = new ResourceLocation(EverlastingArtistry.MODID, "textures/gui/bgimage.png");
 	
 	public GuiGlyphInfuse() {
 		super(new StringTextComponent(""));
@@ -32,6 +32,12 @@ public class GuiGlyphInfuse extends Screen{
 		int bgwidth = width/8;
 		RenderGuiHelper.box(ms, buf).from(bgwidth, 0).dim(bgwidth * 6, height).draw();
 		tess.draw();
+		
+		buf.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_COLOR_TEX);
+		this.minecraft.getTextureManager().bindTexture(new ResourceLocation(EverlastingArtistry.MODID, "textures/gui/bg.png"));
+		RenderGuiHelper.box(ms, buf).from(bgwidth, height/2).dim(128, 16).draw();
+		tess.draw();
+		
 		super.render(ms, mouseX, mouseY, partialTicks);
 	}
 	
